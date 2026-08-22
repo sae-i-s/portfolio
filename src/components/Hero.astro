@@ -1,0 +1,36 @@
+---
+// Hero: main section shown in the first viewport
+// All display text is grouped as const variables at the top of the component
+// i18n-ready: when migrating to Astro's i18n feature, swap this variable group for a per-locale dictionary object
+
+const HERO_ROLE = 'Mediengestalterin & Frontend Developer'; // i18n-ready
+const HERO_NAME = 'Sae Ishima-Sell'; // i18n-ready
+const HERO_TAGLINE = 'Designing and building thoughtful digital experiences, from concept to code.'; // placeholder copy / i18n-ready
+const HERO_CTA_LABEL = 'View Works'; // i18n-ready
+const HERO_CTA_HREF = '#works';
+---
+
+<section class="flex min-h-[85vh] flex-col justify-center px-8 md:px-16 lg:px-24">
+	<!-- Role: understated, shown in the accent color -->
+	<p class="mb-4 font-body text-sm font-medium uppercase tracking-[0.2em] text-accent">
+		{HERO_ROLE}
+	</p>
+
+	<!-- Name: large typography as the focal point -->
+	<h1 class="font-heading text-6xl font-black leading-[1.05] text-neutral-900 sm:text-7xl lg:text-8xl">
+		{HERO_NAME}
+	</h1>
+
+	<!-- Tagline: generous spacing, set in the body font -->
+	<p class="mt-8 max-w-xl font-body text-lg text-neutral-600 sm:text-xl">
+		{HERO_TAGLINE}
+	</p>
+
+	<!-- CTA button -->
+	<a
+		href={HERO_CTA_HREF}
+		class="mt-10 inline-block w-fit rounded-md bg-accent px-8 py-4 font-body text-sm font-medium text-background transition-opacity hover:opacity-90"
+	>
+		{HERO_CTA_LABEL}
+	</a>
+</section>

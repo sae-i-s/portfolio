@@ -1,0 +1,49 @@
+---
+// About: brief introduction, skills, and background shown below the Hero section
+// All display text is grouped as const variables at the top of the component
+// i18n-ready: when migrating to Astro's i18n feature, swap this variable group for a per-locale dictionary object
+
+const ABOUT_LABEL = 'About'; // i18n-ready
+const ABOUT_BIO =
+	'I am a Mediengestalterin and frontend developer focused on building clean, accessible interfaces that bridge design and code.'; // placeholder copy / i18n-ready
+
+const SKILLS_LABEL = 'Skills'; // i18n-ready
+const SKILLS_LIST = ['HTML/CSS', 'SCSS', 'JavaScript', 'CMS Integration (TYPO3)']; // i18n-ready
+
+const BACKGROUND_LABEL = 'Background'; // i18n-ready
+const BACKGROUND_ITEM = 'Ausbildung Mediengestalterin Digital und Print, IHK'; // i18n-ready
+---
+
+<section class="px-8 py-20 md:px-16 lg:px-24">
+	<!-- Section label: matches the accent-colored eyebrow style used in Hero -->
+	<h2 id="about" class="mb-4 scroll-mt-24 font-body text-sm font-medium uppercase tracking-[0.2em] text-accent">
+		{ABOUT_LABEL}
+	</h2>
+
+	<!-- Bio: left-aligned body copy -->
+	<p class="max-w-xl font-body text-lg text-neutral-600 sm:text-xl">
+		{ABOUT_BIO}
+	</p>
+
+	<div class="mt-12 grid gap-10 sm:grid-cols-2">
+		<!-- Skills list -->
+		<div>
+			<h3 class="font-heading text-2xl font-semibold text-neutral-900">
+				{SKILLS_LABEL}
+			</h3>
+			<ul class="mt-4 space-y-2 font-body text-base text-neutral-600">
+				{SKILLS_LIST.map((skill) => <li>{skill}</li>)}
+			</ul>
+		</div>
+
+		<!-- Background / education -->
+		<div>
+			<h3 class="font-heading text-2xl font-semibold text-neutral-900">
+				{BACKGROUND_LABEL}
+			</h3>
+			<p class="mt-4 font-body text-base text-neutral-600">
+				{BACKGROUND_ITEM}
+			</p>
+		</div>
+	</div>
+</section>

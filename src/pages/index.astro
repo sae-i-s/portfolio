@@ -1,0 +1,17 @@
+---
+// Home page: wraps the page in BaseLayout and renders the Hero section
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Works from '../components/Works.astro';
+import Footer from '../components/Footer.astro';
+
+const PAGE_TITLE = 'Sae Ishima-Sell — Portfolio'; // i18n-ready
+---
+
+<BaseLayout title={PAGE_TITLE}>
+	<Hero />
+	<About />
+	<Works />
+	<Footer />
+</BaseLayout>

@@ -1,0 +1,51 @@
+---
+// Works: showcases project cards below the About section
+// All display text is grouped as const variables / arrays at the top of the component
+// i18n-ready: when migrating to Astro's i18n feature, swap this variable group for a per-locale dictionary object
+
+const WORKS_LABEL = 'Works'; // i18n-ready
+
+// Project data as a const array so entries can be swapped for real content later
+const PROJECTS = [
+	{
+		name: 'Project One', // placeholder copy / i18n-ready
+		description: 'A short description of this project and the problem it solves.', // placeholder copy / i18n-ready
+		tags: ['HTML/CSS', 'JavaScript'],
+	},
+	{
+		name: 'Project Two', // placeholder copy / i18n-ready
+		description: 'A short description of this project and the problem it solves.', // placeholder copy / i18n-ready
+		tags: ['SCSS', 'TYPO3'],
+	},
+	{
+		name: 'Project Three', // placeholder copy / i18n-ready
+		description: 'A short description of this project and the problem it solves.', // placeholder copy / i18n-ready
+		tags: ['JavaScript', 'TYPO3'],
+	},
+]; // i18n-ready
+---
+
+<section class="px-8 py-20 md:px-16 lg:px-24">
+	<!-- Section label: matches the accent-colored eyebrow style used in Hero and About -->
+	<h2 id="works" class="mb-10 scroll-mt-24 font-body text-sm font-medium uppercase tracking-[0.2em] text-accent">
+		{WORKS_LABEL}
+	</h2>
+
+	<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+		{
+			PROJECTS.map((project) => (
+				<article class="rounded-md bg-neutral-100 p-6 transition-transform hover:-translate-y-1 hover:shadow-md">
+					<h3 class="font-heading text-xl font-semibold text-neutral-900">{project.name}</h3>
+					<p class="mt-3 font-body text-base text-neutral-600">{project.description}</p>
+					<ul class="mt-5 flex flex-wrap gap-2">
+						{project.tags.map((tag) => (
+							<li class="rounded-full bg-accent/10 px-3 py-1 font-body text-xs font-medium text-accent">
+								{tag}
+							</li>
+						))}
+					</ul>
+				</article>
+			))
+		}
+	</div>
+</section>
