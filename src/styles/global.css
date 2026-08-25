@@ -2,8 +2,8 @@
 
 /* Design tokens: Tailwind v4 generates utilities like bg-background / text-accent / font-heading from these variables */
 @theme {
-	--color-background: #f2f1ec;
-	--color-accent: #4a5c2f;
-	--font-heading: "Jost", sans-serif;
-	--font-body: "Work Sans", sans-serif;
+  --color-background: #ececec;
+  --color-accent: #1202e7;
+  --font-heading: "Jost", sans-serif;
+  --font-body: "Work Sans", sans-serif;
 }
